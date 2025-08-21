@@ -247,7 +247,8 @@ socket.emit('init', {
   availablePlayers,
   currentPickIndex,
   timerDuration,
-  isPaused
+  isPaused,
+  watchlists 
 });
 
 // Update a team's watchlist from client
