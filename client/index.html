@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FANTALEMONADA Draft</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header">FANTALEMONADA</header>
+
+  <!-- Top Control Bar -->
+  <div class="topbar">
+    <!-- Left: Pause/Resume + Admin + Timer select (admin only) -->
+    <div class="topbar-left">
+      <button id="pauseBtn" class="btn">Pause Draft</button>
+
+      <div class="admin-box">
+        <input id="adminPass" type="password" placeholder="Admin password" autocomplete="off" />
+        <button id="adminBtn" class="btn">Admin</button>
+      </div>
+
+      <label for="timerSelect" class="lbl">Timer:</label>
+      <select id="timerSelect" class="select" disabled>
+        <option value="120">2:00</option>
+        <option value="240">4:00</option>
+        <option value="2">0:10</option>
+      </select>
+    </div>
+
+    <div class="topbar-center">
+  <span id="timer" class="timer">00:00</span>
+  <span class="separator">|</span>
+  <span id="currentTeam" class="timer">—</span>
+</div>
+
+    <!-- Right: Select Your Team + Export CSV -->
+    <div class="topbar-right">
+      <label for="teamSelect" class="lbl">Select Your Team:</label>
+      <select id="teamSelect" class="select">
+        <option value="">-- Choose Team --</option>
+        <option value="Team 1">Team 1</option>
+        <option value="Team 2">Team 2</option>
+        <option value="Team 3">Team 3</option>
+        <option value="Team 4">Team 4</option>
+        <option value="Team 5">Team 5</option>
+        <option value="Team 6">Team 6</option>
+        <option value="Team 7">Team 7</option>
+        <option value="Team 8">Team 8</option>
+        <option value="Team 9">Team 9</option>
+        <option value="Team 10">Team 10</option>
+        <option value="Team 11">Team 11</option>
+        <option value="Team 12">Team 12</option>
+      </select>
+
+    <div id="teamPasswordContainer" style="display:none; margin-top:6px;">
+      <input type="password" id="teamPasswordInput" placeholder="Enter team password" />
+      <button id="teamPasswordSubmit">Submit</button>
+    </div>
+
+
+      <button id="exportCSV" class="btn btn-primary">Export Draft CSV</button>
+    </div>
+  </div>
+
+  <!-- Three Columns -->
+  <main class="columns">
+    <!-- Left Column: Draft Board (scrollable) -->
+    <section class="panel">
+      <div class="panel-title">Draft Board</div>
+      <div id="draftBoard" class="scroll"></div>
+    </section>
+
+    <!-- Middle Column: Player Board (table, filters, sort) -->
+    <section class="panel">
+      <div class="panel-title">Players</div>
+
+      <div class="filters">
+        <input id="search" class="input" type="text" placeholder="Search player…"/>
+        <select id="filterPosition" class="select">
+          <option value="">All Positions</option>
+          <option value="GK">GK</option>
+          <option value="DEF">DEF</option>
+          <option value="MID">MID</option>
+          <option value="FWD">FWD</option>
+        </select>
+        <select id="filterTeam" class="select">
+          <option value="">All Teams</option>
+          <!-- teams auto-populated -->
+        </select>
+        <select id="watchlistFilter" class="select">
+          <option value="">All Players</option>
+          <option value="watchlist">Watchlist Only</option>
+        </select>
+
+        <label for="sortBy" class="lbl">Sort:</label>
+        <select id="sortBy" class="select">
+          <option value="default">Default</option>
+          <option value="player">Player (A–Z)</option>
+          <option value="team">Team (A–Z)</option>
+          <option value="position">Position</option>
+        </select>
+      </div>
+
+      <div class="table-wrap scroll">
+        <table id="playersTable" class="table">
+          <thead>
+            <tr>
+              <th>★</th> <!-- watchlist star -->
+              <th data-col="position">Position</th>
+              <th data-col="player">Player</th>
+              <th data-col="team">Team</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- populated by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Right Column: Team Selections (current + future picks, scrollable) -->
+    <section class="panel">
+      <div class="panel-title with-select">
+        <span>Team Selections</span>
+        <select id="viewTeamSelect" class="select">
+          <option value="">-- Choose Team --</option>
+          <option value="Team 1">Team 1</option>
+          <option value="Team 2">Team 2</option>
+          <option value="Team 3">Team 3</option>
+          <option value="Team 4">Team 4</option>
+          <option value="Team 5">Team 5</option>
+          <option value="Team 6">Team 6</option>
+          <option value="Team 7">Team 7</option>
+          <option value="Team 8">Team 8</option>
+          <option value="Team 9">Team 9</option>
+          <option value="Team 10">Team 10</option>
+          <option value="Team 11">Team 11</option>
+          <option value="Team 12">Team 12</option>
+        </select>
+      </div>
+
+      <div class="table-wrap scroll">
+        <table id="teamDraftTable" class="table">
+          <thead>
+            <tr>
+              <th>Pick</th>
+              <th>Position</th>
+              <th>Player</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <!-- populated live by app.js (includes future picks for the selected team) -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.socket.io/4.7.1/socket.io.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
