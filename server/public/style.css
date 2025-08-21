@@ -351,3 +351,19 @@ body.on-deck { background-color: rgb(253, 253, 32); }
     grid-template-columns: 1fr;
   }
 }
+/* ===== Horizontal scroll for player filters on small screens ===== */
+@media (max-width: 600px) {
+  .filters {
+    display: flex;           /* switch from grid to flex */
+    overflow-x: auto;        /* enable horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    gap: 8px;                /* maintain spacing between items */
+    padding: 10px 8px;
+  }
+
+  .filters input,
+  .filters select,
+  .filters label {
+    flex: 0 0 auto;          /* prevent items from shrinking */
+  }
+}
