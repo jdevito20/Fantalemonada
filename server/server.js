@@ -93,7 +93,12 @@ let remainingSeconds = timerDuration; // counts down each second
 const adminSockets = new Set();
 
 // Serve client static files (assumes client files in ./client)
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 
 // Load players CSV into availablePlayers (filePath can be adjusted)
 function loadCSV(filePath = path.join(__dirname, 'players.csv')) {
@@ -265,11 +270,7 @@ socket.on("selectTeam", ({ teamName, password }) => {
   socket.emit("teamSelectionResult", { success: false, teamName });
   return;
  }
-// Check if team is already taken
-if (activeTeams[teamName]) {
-  socket.emit("teamSelectionResult", { success: false, teamName });
-  return;
-}
+
 
   // Assign team to this socket
   socket.team = teamName;
