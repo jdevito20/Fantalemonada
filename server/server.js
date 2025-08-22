@@ -33,7 +33,7 @@ const teamPasswords = {
   'AutoDraft FC' : "797",
   'Chunky Lozano': "378",
   'Cioccolato Bianco': "982",
-  'Alessandro FC': "362",
+  'Rocco FC': "362",
   'SSC Mario Rui': "796",
   // add all teams here
 };
@@ -49,7 +49,7 @@ const NUM_ROUNDS = 25;
 // Default draft order (edit this array in code to set draft order before starting)
 let draftOrder = [
   'FC Wyoming','ASS Rint oCess','Real Boban','LI Mutanda','Vostri Cavani','Paris San Gennaro',
-  'Stamm Nguaiat FC','AutoDraft FC','Chunky Lozano','Cioccolato Bianco','Alessandro FC','SSC Mario Rui'
+  'Stamm Nguaiat FC','AutoDraft FC','Chunky Lozano','Cioccolato Bianco','Rocco FC','SSC Mario Rui'
 ];
 // ---------------------------------------
 // Max allowed per position per team
@@ -73,7 +73,7 @@ const watchlists = {
   'AutoDraft FC': [],
   'Chunky Lozano': [],
   'Cioccolato Bianco': [],
-  'Alessandro FC': [],
+  'Rocco FC': [],
   'SSC Mario Rui': []
 };
 
