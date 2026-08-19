@@ -28,7 +28,7 @@ const teamPasswords = {
   'Real Boban': "483",
   'LI Mutanda': "731",
   'Vostri Cavani': "861",
-  'Paris San Gennaro': "938",
+  'Gio': "938",
   'Stamm Nguaiat FC': "581",
   'AutoDraft FC' : "797",
   'Chunky Lozano': "378",
@@ -48,8 +48,8 @@ const NUM_ROUNDS = 25;
 
 // Default draft order (edit this array in code to set draft order before starting)
 let draftOrder = [
-  'FC Wyoming','ASS Rint oCess','Real Boban','LI Mutanda','Vostri Cavani','Paris San Gennaro',
-  'Stamm Nguaiat FC','AutoDraft FC','Chunky Lozano','Cioccolato Bianco','Rocco FC','SSC Mario Rui'
+  'FC Wyoming','AutoDraft FC','Real Boban','Gio','Chunky Lozano','ASS Rint oCess',
+  'Vostri Cavani','LI Mutanda','Stamm Nguaiat','Rocco','Cioccolato Bianco','SSC Mario Rui'
 ];
 // ---------------------------------------
 // Max allowed per position per team
@@ -68,7 +68,7 @@ const watchlists = {
   'Real Boban': [],
   'LI Mutanda': [],
   'Vostri Cavani': [],
-  'Paris San Gennaro': [],
+  'Gio': [],
   'Stamm Nguaiat FC': [],
   'AutoDraft FC': [],
   'Chunky Lozano': [],
