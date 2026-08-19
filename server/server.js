@@ -49,7 +49,7 @@ const NUM_ROUNDS = 25;
 // Default draft order (edit this array in code to set draft order before starting)
 let draftOrder = [
   'FC Wyoming','AutoDraft FC','Real Boban','Gio','Chunky Lozano','ASS Rint oCess',
-  'Vostri Cavani','LI Mutanda','Stamm Nguaiat','Rocco','Cioccolato Bianco','SSC Mario Rui'
+  'Vostri Cavani','LI Mutanda','Stamm Nguaiat FC','Rocco','Cioccolato Bianco','SSC Mario Rui'
 ];
 // ---------------------------------------
 // Max allowed per position per team
